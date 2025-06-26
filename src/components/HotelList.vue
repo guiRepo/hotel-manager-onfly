@@ -19,21 +19,21 @@ export default {
 </script>
 
 <template>
-<div class="hotel-list-container">
-  <div class="list-cell">
-    <div class="row">
-      <div class="a1 col-3">
-        <Card />
-      </div>
-      <div class="a2 col-7">
-        <Content />
-      </div>
-      <div class="a3 col-2">
-        <Pricing />
+  <div class="hotel-list-container">
+    <div class="list-cell">
+      <div class="row">
+        <div class="a1 col-3">
+          <Card />
+        </div>
+        <div class="a2 col-7">
+          <Content />
+        </div>
+        <div class="a3 col-2">
+          <Pricing />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <style lang="scss" scoped>
@@ -55,7 +55,7 @@ background-color: green;
 }
 
 .a2 {
-  background-color: red;
+  background-color: #fff;
 }
 
 .a3 {
