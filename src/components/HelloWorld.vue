@@ -32,10 +32,11 @@ const count = ref(0)
     >.
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <q-btn label="Clique aqui" />
 </template>
 
 <style lang="scss" scoped>
-.read-the-docs {
-  color: $primary-200;
-}
+  .read-the-docs {
+    color: $primary-200;
+  }
 </style>
