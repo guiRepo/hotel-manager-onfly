@@ -1,8 +1,8 @@
 <script lang="ts">
 import { ref } from 'vue'
-import Card from './CardComponents/Card.vue' // caminho relativo
-import Content from './CardComponents/Content.vue' // caminho relativo
-import Pricing from './CardComponents/Pricing.vue' // caminho relativo
+import Card from './CardComponents/Card.vue'
+import Content from './CardComponents/Content.vue'
+import Pricing from './CardComponents/Pricing.vue' 
 
 export default {
   components: {
@@ -20,17 +20,17 @@ export default {
 
 <template>
   <div class="hotel-list-container">
-    <div class="list-cell">
-      <div class="row">
-        <div class="a1 col-3">
-          <Card />
-        </div>
-        <div class="a2 col-7">
-          <Content />
-        </div>
-        <div class="a3 col-2">
-          <Pricing />
-        </div>
+    <div class="list-cell row no-wrap">
+      <div class="a1 col-3">
+        <Card />
+      </div>
+
+      <div class="a2 col-7">
+        <Content />
+      </div>
+
+      <div class="a3 col-2">
+        <Pricing />
       </div>
     </div>
   </div>
@@ -38,28 +38,51 @@ export default {
 
 <style lang="scss" scoped>
 .hotel-list-container {
-  height: 100vh;
   background-color: $info-100;
-  border-top-left-radius: $border-radius-unit;
-  border-top-right-radius: $border-radius-unit;
   padding: 30px;
 }
 
 .list-cell {
   background-color: #fff;
+  border-radius: 20px;
   height: 200px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .a1 {
-background-color: green;
+  height: 100%;
+  position: relative;
+  border-start-start-radius: 20px;
+  border-end-start-radius: 20px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 .a2 {
-  background-color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .a3 {
-  background-color: aquamarine;
+  padding: 16px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
 }
+
 </style>
 
