@@ -96,7 +96,7 @@ export default {
     background-color: $info-100;
     width: 500px;
     border-radius: $border-radius-unit;
-    border: 1px solid $info-200;
+    border: 1px solid $info-300;
     text-decoration: none;
     padding-left: 10px;
 
