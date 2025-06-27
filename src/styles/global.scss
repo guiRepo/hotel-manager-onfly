@@ -1,24 +1,13 @@
-//Cores
-$primary-100: #009EFB;
-$primary-200: #007DC7;
+@import 'variables';
 
-$success-100: #00835C;
-
-$info-100: #ADADB3;
-$info-200: #84858C;
-$info-300: #84858C;
-$info-400: #696A71;
-$info-500: #58585F;
-$info-600: #434347;
-
-//Container
-$container-max-width: 1200px;
-
-//ESPAÇAMENTO E ARREDONDAMENTO
-$spacing-unit: 4px;
-$border-radius-unit: 4px;
-
-// TIPOGRAFIA
-$font-family-base: 'Poppins', sans-serif;
-$font-size-base: 12px;
-$font-size-title: 16px;
+:root {
+  font-family: $font-family-base;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background-color: $primary-100;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
