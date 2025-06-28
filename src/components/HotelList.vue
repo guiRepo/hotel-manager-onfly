@@ -19,6 +19,7 @@
     try {
       const response = await axios.get<Hotel[]>('http://localhost:3000/hotels')
       hotels.value = response.data
+      console.log(hotels.value)
     } catch (err) {
       console.error('Erro ao buscar hotéis:', err)
     }
@@ -60,7 +61,7 @@
         </div>
 
         <div class="a2 col-7">
-          <Content />
+          <Content :data="hotel"/>
         </div>
 
         <div class="a3 col-2">

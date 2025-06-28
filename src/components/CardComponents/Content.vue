@@ -1,27 +1,59 @@
 <script setup lang="ts">
+  import { computed } from 'vue'
+
+
+  const props = defineProps<{
+    data: {
+      hasRefundableRoom: boolean
+      hasBreakFast: boolean
+      name: string
+      district: string
+    }
+  }>()
+
+  const refundableTextClass = computed(() =>
+    props.data.hasRefundableRoom ? 'text-green' : 'text-red'
+  )
+
+  const breakfastTextClass = computed(() =>
+    props.data.hasBreakFast ? 'text-green' : 'text-red'
+  )
+
+  const amenityIconMap: Record<string, string> = {
+  'Wi-Fi': 'wifi',
+  'Piscina': 'pool',
+  'Estacionamento': 'local_parking',
+  'Spa': 'spa',
+  'Academia': 'fitness_center',
+  'Cozinha compartilhada': 'kitchen',
+  'Restaurante': 'restaurant',
+  'Trilhas': 'hiking'
+}
 </script>
 
 <template>
   <div class="content-container">
-    <div class="content-title">Hotel Atlantico Star</div>
-    <div class="content-subtitle">Copacabana</div>
+    <div class="content-title">{{ data.name }}</div>
+    <div class="content-subtitle">{{ data.district }}</div>
 
-    <div class="amenities ">
-      <q-icon name="wb_sunny" class="amenity-icon" />
-      <q-icon name="wifi" class="amenity-icon" />
-      <q-icon name="tv" class="amenity-icon" />
-      <q-icon name="smoke_free" class="amenity-icon" />
-      <q-icon name="accessible" class="amenity-icon" />
+    <div class="amenities">
+      <q-icon
+        v-for="(amenity, index) in data.amenities"
+        :key="index"
+        :name="amenityIconMap[amenity] || 'help_outline'"
+        class="amenity-icon"
+        :title="amenity"
+      />
     </div>
 
     <div class="benefits ">
       <div class="benefit">
-        <q-icon name="attach_money" class="text-green" />
-        <span class="text-green">Reembolsável</span>
+        <q-icon name="attach_money" :class="refundableTextClass" />
+        <span :class="refundableTextClass">Reembolsável</span>
       </div>
       <div class="benefit">
-        <q-icon name="restaurant" class="text-green" />
-        <span class="text-green">Café da manhã</span>
+        <q-icon name="restaurant" :class="breakfastTextClass" />
+        <span :class="breakfastTextClass">Café da manhã</span>
       </div>
     </div>
   </div>
