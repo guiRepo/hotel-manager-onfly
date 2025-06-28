@@ -216,131 +216,144 @@
     "id": 1,
     "description": "Confortável hotel com vista para o mar e excelente localização em Copacabana.",
     "fullAddress": "Av. Atlântica, 1500 - Copacabana, Rio de Janeiro - RJ",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Estacionamento"]
   },
   {
     "id": 2,
     "description": "Luxuoso hotel 5 estrelas com spa completo e vista panorâmica.",
     "fullAddress": "Av. das Américas, 3500 - Barra da Tijuca, Rio de Janeiro - RJ",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Spa", "Academia", "Estacionamento"]
   },
   {
     "id": 3,
     "description": "Pousada charmosa no coração da Lapa, ideal para curtas estadias.",
     "fullAddress": "Rua Riachuelo, 70 - Lapa, Rio de Janeiro - RJ",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Estacionamento"]
   },
   {
     "id": 4,
     "description": "Aconchegante pousada no centro histórico, perfeita para viajantes econômicos.",
     "fullAddress": "Av. Afonso Pena, 2000 - Centro, Belo Horizonte - MG",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Estacionamento"]
   },
   {
     "id": 5,
     "description": "Hotel moderno próximo à Lagoa da Pampulha com fácil acesso ao aeroporto.",
     "fullAddress": "Av. Otacílio Negrão de Lima, 1650 - Pampulha, Belo Horizonte - MG",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Academia", "Estacionamento"]
   },
   {
     "id": 6,
     "description": "Hostel econômico com excelente localização e ambiente jovem.",
     "fullAddress": "Rua Pernambuco, 800 - Savassi, Belo Horizonte - MG",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Cozinha compartilhada"]
   },
   {
     "id": 7,
     "description": "Hotel ecológico rodeado pela natureza, ideal para relaxar.",
     "fullAddress": "Rua das Flores, 321 - Floresta, Curitiba - PR",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Estacionamento", "Trilhas", "Restaurante"]
   },
   {
     "id": 8,
     "description": "Hostel urbano com decoração moderna e ambiente descontraído.",
     "fullAddress": "Av. Batel, 1234 - Batel, Curitiba - PR",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Cozinha compartilhada"]
   },
   {
     "id": 9,
     "description": "Hotel sofisticado no centro de Curitiba com spa e restaurante.",
     "fullAddress": "Rua XV de Novembro, 1200 - Centro Cívico, Curitiba - PR",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"]
   },
   {
     "id": 10,
     "description": "Hotel à beira-mar com piscina e restaurante à la carte.",
     "fullAddress": "Rua das Gaivotas, 789 - Canasvieiras, Florianópolis - SC",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Restaurante"]
   },
   {
     "id": 11,
     "description": "Pousada simples e acolhedora, próxima à Lagoa da Conceição.",
     "fullAddress": "Rua das Rendeiras, 45 - Lagoa da Conceição, Florianópolis - SC",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Estacionamento"]
   },
   {
     "id": 12,
     "description": "Hostel de praia com acesso direto ao mar e café da manhã incluso.",
     "fullAddress": "Rua das Dunas, 234 - Ingleses, Florianópolis - SC",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Cozinha compartilhada"]
   },
   {
     "id": 13,
     "description": "Hotel tropical com piscina ampla e restaurante regional.",
     "fullAddress": "Av. Djalma Batista, 1050 - Adrianópolis, Manaus - AM",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Restaurante", "Estacionamento"]
   },
   {
     "id": 14,
@@ -350,17 +363,19 @@
       "https://cdn.quasar.dev/img/mountains.jpg",
       "https://cdn.quasar.dev/img/parallax2.jpg",
       "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    ],
+    "amenities": ["Wi-Fi", "Cozinha compartilhada"]
   },
   {
     "id": 15,
     "description": "Hotel de luxo com arquitetura histórica e serviço premium.",
     "fullAddress": "Av. Rio Negro, 500 - Ponta Negra, Manaus - AM",
-    "images" :[
-    "https://cdn.quasar.dev/img/mountains.jpg",
-    "https://cdn.quasar.dev/img/parallax2.jpg",
-    "https://cdn.quasar.dev/img/quasar.jpg"
-  ]
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+    ],
+    "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"]
   }
 ],
   "cities": [

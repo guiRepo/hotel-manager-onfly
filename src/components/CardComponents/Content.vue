@@ -3,12 +3,7 @@
 
 
   const props = defineProps<{
-    data: {
-      hasRefundableRoom: boolean
-      hasBreakFast: boolean
-      name: string
-      district: string
-    }
+    data: any
   }>()
 
   const refundableTextClass = computed(() =>
@@ -20,15 +15,15 @@
   )
 
   const amenityIconMap: Record<string, string> = {
-  'Wi-Fi': 'wifi',
-  'Piscina': 'pool',
-  'Estacionamento': 'local_parking',
-  'Spa': 'spa',
-  'Academia': 'fitness_center',
-  'Cozinha compartilhada': 'kitchen',
-  'Restaurante': 'restaurant',
-  'Trilhas': 'hiking'
-}
+    'Wi-Fi': 'wifi',
+    'Piscina': 'pool',
+    'Estacionamento': 'local_parking',
+    'Spa': 'spa',
+    'Academia': 'fitness_center',
+    'Cozinha compartilhada': 'kitchen',
+    'Restaurante': 'restaurant',
+    'Trilhas': 'hiking'
+  } 
 </script>
 
 <template>

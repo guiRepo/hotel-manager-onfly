@@ -65,7 +65,7 @@
         </div>
 
         <div class="a3 col-2">
-          <Pricing />
+          <Pricing :data="hotel"/>
         </div>
       </div>
 
