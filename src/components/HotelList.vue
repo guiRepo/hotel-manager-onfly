@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import axios from 'axios';
+  import { ref, onMounted } from 'vue'
   import Card from './CardComponents/Card.vue'
   import Content from './CardComponents/Content.vue'
   import Pricing from './CardComponents/Pricing.vue'
@@ -12,6 +13,17 @@
   ]
 
   const searchQuery = ref('')
+
+  const hotels = ref<any[]>([])
+  onMounted(async () => {
+    try {
+      const response = await axios.get<Hotel[]>('http://localhost:3000/hotels')
+      hotels.value = response.data
+      console.log(hotels.value)
+    } catch (err) {
+      console.error('Erro ao buscar hotéis:', err)
+    }
+  })
 </script>
 
 <template>  
@@ -42,19 +54,21 @@
       </q-input>
     </div>
     <div class="hotel-list-container">
-      <div class="list-cell row no-wrap">
+
+      <div v-for="hotel in hotels" :key="hotel.id" class="list-cell row no-wrap">
         <div class="a1 col-3">
-          <Card />
+          <Card :data="hotel" />
         </div>
 
         <div class="a2 col-7">
-          <Content />
+          <Content :data="hotel"/>
         </div>
 
         <div class="a3 col-2">
-          <Pricing />
+          <Pricing :data="hotel"/>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -108,7 +122,6 @@
   background-color: $info-200;
   padding: 30px;
   border-radius: 20px;
-  height: 100vh;
 }
 
 .list-cell {
@@ -118,6 +131,7 @@
   overflow: hidden;
   display: flex;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
 }
 
 .a1 {

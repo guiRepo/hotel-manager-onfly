@@ -1,20 +1,41 @@
 <script setup lang="ts">
-// Nada necessário por enquanto
+  import CardDetails from './CardDetails.vue'
+  import { ref } from 'vue'
+  import axios from 'axios';
+
+  const props = defineProps<{
+    data: any
+  }>()
+  
+  const dialog = ref(false)     
+  const hotelDetails = ref<any>(null)
+
+  async function getItem() {
+    try {
+    const res = await axios.get(`http://localhost:3000/hotels_details?id=${props.data?.id}`)
+      hotelDetails.value = res.data[0]
+      dialog.value = true
+      console.log(res.data[0])
+    } catch (err) {
+      console.error('Erro ao buscar hotéis:', err)
+    }
+  }
 </script>
 
 <template>
   <div class="pricing-container">
     <div class="text-caption text-grey">Por dia</div>
-    <div class="text-h6 text-primary">R$ 100</div>
-    <div class="text-caption text-grey">No booking R$ 115</div>
+    <div class="text-h6 text-primary">R$ {{ props.data?.dailyPrice }}</div>
 
     <div class="details q-mt-sm">
-      <div class="row-text">Diarias <span class="q-ml-sm">2x R$ 100,00</span></div>
-      <div class="row-text">Taxas <span class="q-ml-sm">2x R$ 80,00</span></div>
-      <div class="row-text">Total <span class="q-ml-sm">R$ 360</span></div>
+      <div class="row-text">Diarias <span class="q-ml-sm">R$ {{ data?.dailyPrice }},00</span></div>
+      <div class="row-text">Taxas <span class="q-ml-sm">R$ {{ data?.tax }},00</span></div>
+      <div class="row-text">Total <span class="q-ml-sm">R$ {{ data?.totalPrice }}</span></div>
     </div>
 
-    <q-btn label="Ver detalhes" color="primary" class="q-mt-sm full-width" rounded />
+    <q-btn label="Ver detalhes" color="primary" class="q-mt-sm full-width" rounded @click="getItem()" />
+
+    <CardDetails v-model="dialog" :hotel="hotelDetails" :hotelName="data?.name"  :data="data"/>
   </div>
 </template>
 
