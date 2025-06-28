@@ -2,10 +2,11 @@
   import { ref } from 'vue'
   import axios from 'axios';
 
-
   const props = defineProps<{
     modelValue: boolean
     hotel: any
+    hotelName: string
+    data: any
   }>()
 
   const emit = defineEmits(['update:modelValue'])
@@ -40,8 +41,8 @@
   <q-dialog v-model="isDialogOpen" persistent>
     <q-card class="dialog-card">
       <q-card-section class="row items-center justify-between q-pa-sm q-px-md">
-        <div class="text-h6 text-weight-medium">{{ props.hotel?.name }}</div>
-        <q-btn flat icon="close" @click="close" dense />
+        <div class="text-h6 text-weight-medium text-black">{{ props.hotelName }}</div>
+        <q-btn flat icon="close" @click="close" dense color="black" />
       </q-card-section>
 
       <div class="relative-position image-container">
@@ -52,10 +53,8 @@
           style="min-height: 220px"
         >
           <template #default>
-            <div class="absolute-top-left q-pa-sm">
-              <q-chip dense color="white" text-color="blue-7" class="text-weight-bold shadow-1">
-                ★★★★☆
-              </q-chip>
+            <div class="rating-overlay">
+              <q-rating v-model="data.stars" :max="5" size="15px" color="primary" />
             </div>
           </template>
         </q-img>
@@ -91,12 +90,12 @@
       <q-card-section class="q-px-md q-pt-md q-pb-sm">
         <div class="section-title">Localização</div>
         <div class="text-body2 text-grey-8 q-mt-xs">
-          {{ props.hotel?.address }}
+          {{ props.hotel?.fullAddress }}
         </div>
       </q-card-section>
 
       <q-card-section class="q-px-md q-pt-md q-pb-md">
-        <div class="section-title">Sobre o {{ props.hotel?.name }}</div>
+        <div class="section-title">Sobre o {{ props.hotelName }}</div>
         <div class="text-body2 text-grey-8 q-mt-xs">
           {{ props.hotel?.description }}
         </div>
@@ -125,16 +124,34 @@
 
   .nav-btn {
     position: absolute;
-    top: 50%;
+    bottom: 0%;
+    margin-inline: 10px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.85);
     color: #333;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
+
   .nav-btn.left {
     left: 8px;
   }
+
   .nav-btn.right {
     right: 8px;
   }
+
+  .rating-overlay {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: white;
+    padding: 4px 6px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
 </style>
