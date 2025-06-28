@@ -1,11 +1,10 @@
 <script setup lang="ts">
   import { ref } from 'vue'
 
-  const images = [
-    'https://cdn.quasar.dev/img/mountains.jpg',
-    'https://cdn.quasar.dev/img/parallax2.jpg',
-    'https://cdn.quasar.dev/img/quasar.jpg'
-  ]
+  defineProps<{
+    data: any
+  }>()
+
 
   const currentIndex = ref(0)
   const stars = ref(4)
@@ -23,14 +22,14 @@
   <div class="carousel-container">
     <transition name="fade" mode="out-in">
       <img
-        :key="currentIndex"
-        :src="images[currentIndex]"
+        :key="data.id"
+        :src="data.thumb"
         class="carousel-image"
       />
     </transition>
 
     <div class="rating-overlay">
-      <q-rating v-model="stars" :max="5" size="15px" color="primary" />
+      <q-rating v-model="data.stars" :max="5" size="15px" color="primary" />
     </div>
 
     <q-btn flat round dense icon="chevron_left" class="nav-btn left" color="primary" @click="prevImage" />

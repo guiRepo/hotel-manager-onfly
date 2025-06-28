@@ -7,8 +7,8 @@
       "totalPrice": 1200,
       "dailyPrice": 300,
       "tax": 120,
-      "thumb": "https://example.com/images/mar-azul-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Copacabana",
@@ -21,8 +21,8 @@
       "totalPrice": 1800,
       "dailyPrice": 450,
       "tax": 180,
-      "thumb": "https://example.com/images/solaris-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Spa", "Academia", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Spa", "Academia", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Barra da Tijuca",
@@ -35,8 +35,8 @@
       "totalPrice": 780,
       "dailyPrice": 260,
       "tax": 78,
-      "thumb": "https://example.com/images/lapa-bela-thumb.jpg",
-      "amenities": ["Wi-Fi", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Estacionamento"],      
       "hasBreakFast": false,
       "hasRefundableRoom": false,
       "district": "Lapa",
@@ -49,8 +49,8 @@
       "totalPrice": 750,
       "dailyPrice": 250,
       "tax": 75,
-      "thumb": "https://example.com/images/campo-thumb.jpg",
-      "amenities": ["Wi-Fi", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Estacionamento"],      
       "hasBreakFast": false,
       "hasRefundableRoom": false,
       "district": "Centro",
@@ -63,8 +63,8 @@
       "totalPrice": 1000,
       "dailyPrice": 250,
       "tax": 100,
-      "thumb": "https://example.com/images/pampulha-thumb.jpg",
-      "amenities": ["Wi-Fi", "Academia", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Academia", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Pampulha",
@@ -77,8 +77,8 @@
       "totalPrice": 360,
       "dailyPrice": 120,
       "tax": 36,
-      "thumb": "https://example.com/images/bh-hostel-thumb.jpg",
-      "amenities": ["Wi-Fi", "Cozinha compartilhada"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Cozinha compartilhada"],      
       "hasBreakFast": false,
       "hasRefundableRoom": true,
       "district": "Savassi",
@@ -91,8 +91,8 @@
       "totalPrice": 960,
       "dailyPrice": 320,
       "tax": 96,
-      "thumb": "https://example.com/images/verde-vida-thumb.jpg",
-      "amenities": ["Wi-Fi", "Estacionamento", "Trilhas", "Restaurante"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Estacionamento", "Trilhas", "Restaurante"],      
       "hasBreakFast": true,
       "hasRefundableRoom": false,
       "district": "Floresta",
@@ -105,8 +105,8 @@
       "totalPrice": 300,
       "dailyPrice": 100,
       "tax": 30,
-      "thumb": "https://example.com/images/hostel-urbano-thumb.jpg",
-      "amenities": ["Wi-Fi", "Cozinha compartilhada"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Cozinha compartilhada"],      
       "hasBreakFast": false,
       "hasRefundableRoom": true,
       "district": "Batel",
@@ -119,8 +119,8 @@
       "totalPrice": 1500,
       "dailyPrice": 375,
       "tax": 150,
-      "thumb": "https://example.com/images/curitiba-lux-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Centro Cívico",
@@ -133,8 +133,8 @@
       "totalPrice": 1050,
       "dailyPrice": 350,
       "tax": 105,
-      "thumb": "https://example.com/images/floripa-mar-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Restaurante"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Restaurante"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Canasvieiras",
@@ -147,8 +147,8 @@
       "totalPrice": 600,
       "dailyPrice": 200,
       "tax": 60,
-      "thumb": "https://example.com/images/lagoa-azul-thumb.jpg",
-      "amenities": ["Wi-Fi", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Estacionamento"],      
       "hasBreakFast": false,
       "hasRefundableRoom": false,
       "district": "Lagoa da Conceição",
@@ -161,8 +161,8 @@
       "totalPrice": 390,
       "dailyPrice": 130,
       "tax": 39,
-      "thumb": "https://example.com/images/floripa-hostel-thumb.jpg",
-      "amenities": ["Wi-Fi", "Cozinha compartilhada"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Cozinha compartilhada"],      
       "hasBreakFast": true,
       "hasRefundableRoom": false,
       "district": "Ingleses",
@@ -175,8 +175,8 @@
       "totalPrice": 1100,
       "dailyPrice": 275,
       "tax": 110,
-      "thumb": "https://example.com/images/manaus-hotel-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Restaurante", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Restaurante", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Adrianópolis",
@@ -189,8 +189,8 @@
       "totalPrice": 330,
       "dailyPrice": 110,
       "tax": 33,
-      "thumb": "https://example.com/images/amazonia-hostel-thumb.jpg",
-      "amenities": ["Wi-Fi", "Cozinha compartilhada"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Cozinha compartilhada"],      
       "hasBreakFast": false,
       "hasRefundableRoom": true,
       "district": "Centro",
@@ -203,31 +203,166 @@
       "totalPrice": 1650,
       "dailyPrice": 550,
       "tax": 165,
-      "thumb": "https://example.com/images/rio-negro-thumb.jpg",
-      "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"],
+      "thumb": "https://cdn.quasar.dev/img/mountains.jpg",
+      "amenities": ["Wi-Fi", "Piscina", "Spa", "Estacionamento"],      
       "hasBreakFast": true,
       "hasRefundableRoom": true,
       "district": "Ponta Negra",
       "placeId": "am-man"
     }
   ],
-  "hotels_details": [
-    { "id": 1, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 2, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 3, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 4, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 5, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 6, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 7, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 8, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 9, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 10, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 11, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 12, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 13, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 14, "description": "...", "fullAddress": "...", "images": ["..."] },
-    { "id": 15, "description": "...", "fullAddress": "...", "images": ["..."] }
-  ],
+"hotels_details": [
+  {
+    "id": 1,
+    "description": "Confortável hotel com vista para o mar e excelente localização em Copacabana.",
+    "fullAddress": "Av. Atlântica, 1500 - Copacabana, Rio de Janeiro - RJ",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 2,
+    "description": "Luxuoso hotel 5 estrelas com spa completo e vista panorâmica.",
+    "fullAddress": "Av. das Américas, 3500 - Barra da Tijuca, Rio de Janeiro - RJ",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 3,
+    "description": "Pousada charmosa no coração da Lapa, ideal para curtas estadias.",
+    "fullAddress": "Rua Riachuelo, 70 - Lapa, Rio de Janeiro - RJ",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 4,
+    "description": "Aconchegante pousada no centro histórico, perfeita para viajantes econômicos.",
+    "fullAddress": "Av. Afonso Pena, 2000 - Centro, Belo Horizonte - MG",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 5,
+    "description": "Hotel moderno próximo à Lagoa da Pampulha com fácil acesso ao aeroporto.",
+    "fullAddress": "Av. Otacílio Negrão de Lima, 1650 - Pampulha, Belo Horizonte - MG",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 6,
+    "description": "Hostel econômico com excelente localização e ambiente jovem.",
+    "fullAddress": "Rua Pernambuco, 800 - Savassi, Belo Horizonte - MG",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 7,
+    "description": "Hotel ecológico rodeado pela natureza, ideal para relaxar.",
+    "fullAddress": "Rua das Flores, 321 - Floresta, Curitiba - PR",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 8,
+    "description": "Hostel urbano com decoração moderna e ambiente descontraído.",
+    "fullAddress": "Av. Batel, 1234 - Batel, Curitiba - PR",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 9,
+    "description": "Hotel sofisticado no centro de Curitiba com spa e restaurante.",
+    "fullAddress": "Rua XV de Novembro, 1200 - Centro Cívico, Curitiba - PR",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 10,
+    "description": "Hotel à beira-mar com piscina e restaurante à la carte.",
+    "fullAddress": "Rua das Gaivotas, 789 - Canasvieiras, Florianópolis - SC",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 11,
+    "description": "Pousada simples e acolhedora, próxima à Lagoa da Conceição.",
+    "fullAddress": "Rua das Rendeiras, 45 - Lagoa da Conceição, Florianópolis - SC",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 12,
+    "description": "Hostel de praia com acesso direto ao mar e café da manhã incluso.",
+    "fullAddress": "Rua das Dunas, 234 - Ingleses, Florianópolis - SC",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 13,
+    "description": "Hotel tropical com piscina ampla e restaurante regional.",
+    "fullAddress": "Av. Djalma Batista, 1050 - Adrianópolis, Manaus - AM",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 14,
+    "description": "Hostel temático com foco na cultura amazônica.",
+    "fullAddress": "Rua Luiz Antony, 88 - Centro, Manaus - AM",
+    "images": [
+      "https://cdn.quasar.dev/img/mountains.jpg",
+      "https://cdn.quasar.dev/img/parallax2.jpg",
+      "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  },
+  {
+    "id": 15,
+    "description": "Hotel de luxo com arquitetura histórica e serviço premium.",
+    "fullAddress": "Av. Rio Negro, 500 - Ponta Negra, Manaus - AM",
+    "images" :[
+    "https://cdn.quasar.dev/img/mountains.jpg",
+    "https://cdn.quasar.dev/img/parallax2.jpg",
+    "https://cdn.quasar.dev/img/quasar.jpg"
+  ]
+  }
+],
   "cities": [
     { "placeId": "rj-rio", "name": "Rio de Janeiro", "state": { "name": "Rio de Janeiro", "abbreviation": "RJ" } },
     { "placeId": "mg-bh", "name": "Belo Horizonte", "state": { "name": "Minas Gerais", "abbreviation": "MG" } },
