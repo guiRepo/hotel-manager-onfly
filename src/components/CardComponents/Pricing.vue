@@ -8,19 +8,19 @@
     data: any
   }>()
   
-const dialog = ref(false)     
-const hotelDetails = ref<any>(null)
+  const dialog = ref(false)     
+  const hotelDetails = ref<any>(null)
 
-async function getItem() {
-  try {
-  const res = await axios.get(`http://localhost:3000/hotels_details?id=${props.data?.id}`)
-  hotelDetails.value = res.data[0]
+  async function getItem() {
+    try {
+    const res = await axios.get(`http://localhost:3000/hotels_details?id=${props.data?.id}`)
+      hotelDetails.value = res.data[0]
       dialog.value = true
       console.log(res.data[0])
-  } catch (err) {
-    console.error('Erro ao buscar hotéis:', err)
+    } catch (err) {
+      console.error('Erro ao buscar hotéis:', err)
+    }
   }
-}
 </script>
 
 <template>
@@ -35,7 +35,7 @@ async function getItem() {
       <div class="row-text">Total <span class="q-ml-sm">R$ {{ data?.totalPrice }}</span></div>
     </div>
 
-    <q-btn label="Ver detalhes" color="primary" class="q-mt-sm full-width" rounded @click="dialog = true" />
+    <q-btn label="Ver detalhes" color="primary" class="q-mt-sm full-width" rounded @click="getItem()" />
     <q-btn label="Ver " color="primary" @click="getItem()" />
 
     <CardDetails v-model="dialog" :hotel="hotelDetails" />
