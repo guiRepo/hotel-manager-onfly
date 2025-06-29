@@ -1,29 +1,15 @@
-<script  lang="ts">
-import { useQuasar } from 'quasar'
-import { ref } from 'vue'
+<script setup lang="ts">
+  import { useQuasar } from 'quasar'
+  import { ref } from 'vue'
+  import { storeToRefs } from 'pinia'
+  import { useHotelStore } from './../stores/hotelStore.ts'
+  
+  const hotelStore = useHotelStore();
+  const { searchDistrict } = storeToRefs(hotelStore);
 
-export default {
-  setup () {
-    const $q = useQuasar()
-
-    const name = ref(null)
-    const age = ref(null)
-    const accept = ref(false)
-
-    return {
-      name,
-      age,
-      accept,
-
-      onSubmit () {},
-      onReset () {
-        name.value = null
-        age.value = null
-        accept.value = false
-      }
-    }
+  function onSearchByDistrict(district: string) {
+    hotelStore.searchCities(district);
   }
-}
 </script>
 
 <template>
@@ -47,11 +33,12 @@ export default {
     <q-form @submit="onSubmit" class="row justify-between items-center">
       <q-input
         class="input-a"
-        v-model="name"
+        v-model="searchDistrict"
         label="Destino"
         hide-bottom-space
         :dense="true"
         borderless
+        @update:model-value="onSearchByDistrict"
         >
       </q-input>
       <q-btn

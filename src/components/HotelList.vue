@@ -13,6 +13,7 @@
     selectedSort,   searchQuery,  loading, error
   } = storeToRefs(hotelStore)
 
+
   onMounted(() => hotelStore.fetchHotels()) 
 
 
