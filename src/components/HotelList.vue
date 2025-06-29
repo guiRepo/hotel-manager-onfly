@@ -1,75 +1,76 @@
 <script setup lang="ts">
-  import axios from 'axios';
-  import { ref, onMounted } from 'vue'
-  import Card from './CardComponents/Card.vue'
-  import Content from './CardComponents/Content.vue'
-  import Pricing from './CardComponents/Pricing.vue'
+  import { onMounted }       from 'vue'
+  import { storeToRefs }     from 'pinia'
+  import { useHotelStore }   from './../stores/hotelStore.ts'
+  import Card     from './CardComponents/Card.vue'
+  import Content  from './CardComponents/Content.vue'
+  import Pricing  from './CardComponents/Pricing.vue'
 
-  const selectedSort = ref('price')
-  const sortOptions = [
-    { label: 'Preço', value: 'price' },
-    { label: 'Avaliação', value: 'rating' },
-    { label: 'Nome', value: 'name' }
-  ]
+  const hotelStore = useHotelStore()
 
-  const searchQuery = ref('')
+  const {
+    paginatedHotels, totalPages, currentPage,
+    selectedSort,   searchQuery,  loading, error
+  } = storeToRefs(hotelStore)
 
-  const hotels = ref<any[]>([])
-  onMounted(async () => {
-    try {
-      const response = await axios.get<Hotel[]>('http://localhost:3000/hotels')
-      hotels.value = response.data
-      console.log(hotels.value)
-    } catch (err) {
-      console.error('Erro ao buscar hotéis:', err)
-    }
-  })
+
+  onMounted(() => hotelStore.fetchHotels()) 
+
+
+  function onSortChange(val: string)  { hotelStore.setSort(val) }
+  function onSearch(val: string)      { hotelStore.setSearch(val) }
+  function onPageChange(page: number) { hotelStore.setPage(page) }
 </script>
 
-<template>  
+<template>
   <div class="hotel-page-wrapper">
     <div class="filter-bar row justify-center q-gutter-sm">
       <q-select
         v-model="selectedSort"
-        :options="sortOptions"
+        :options="[
+          { label: 'Preço',     value: 'price'  },
+          { label: 'Avaliação', value: 'rating' },
+          { label: 'Nome',      value: 'name'   }
+        ]"
         label="Ordenar por"
-        dense
-        outlined
-        class="sort-select"
-        emit-value
-        map-options
+        dense outlined emit-value map-options
+        @update:model-value="onSortChange"
       />
+
       <q-input
         v-model="searchQuery"
-        dense
-        outlined
+        dense outlined clearable debounce="300"
         placeholder="Nome do Hotel"
-        class="search-input"
-        debounce="300"
-        clearable
+        @update:model-value="onSearch"
       >
-        <template #append>
-          <q-icon name="search" />
-        </template>
+        <template #append><q-icon name="search" /></template>
       </q-input>
     </div>
-    <div class="hotel-list-container">
 
-      <div v-for="hotel in hotels" :key="hotel.id" class="list-cell row no-wrap">
-        <div class="a1 col-3">
-          <Card :data="hotel" />
-        </div>
+    <div v-if="loading" class="text-center q-my-lg">Carregando…</div>
+    <div v-else-if="error"  class="text-negative q-my-lg">{{ error }}</div>
 
-        <div class="a2 col-7">
-          <Content :data="hotel"/>
-        </div>
-
-        <div class="a3 col-2">
-          <Pricing :data="hotel"/>
-        </div>
+    <div v-else class="hotel-list-container">
+      <div
+        v-for="hotel in paginatedHotels"
+        :key="hotel.id"
+        class="list-cell row no-wrap"
+      >
+        <div class="a1 col-3"><Card    :data="hotel" /></div>
+        <div class="a2 col-7"><Content :data="hotel" /></div>
+        <div class="a3 col-2"><Pricing :data="hotel" /></div>
       </div>
-
     </div>
+
+    <q-pagination
+      v-model="currentPage"
+      :max="totalPages"
+      max-pages="7"
+      color="primary"
+      unelevated
+      @update:model-value="onPageChange"
+      class="q-mt-md"
+    />
   </div>
 </template>
 

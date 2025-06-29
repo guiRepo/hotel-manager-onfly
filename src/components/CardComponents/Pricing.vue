@@ -3,12 +3,10 @@
   import { ref } from 'vue'
   import axios from 'axios';
 
-  const props = defineProps<{
-    data: any
-  }>()
+  const props = defineProps<{ data: any }>()
   
-  const dialog = ref(false)     
-  const hotelDetails = ref<any>(null)
+  const dialog = ref(false);
+  const hotelDetails = ref<any>(null);
 
   async function getItem() {
     try {
