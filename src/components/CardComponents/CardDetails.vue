@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import axios from 'axios';
 
   const props = defineProps<{
     modelValue: boolean
@@ -41,7 +40,7 @@
   <q-dialog v-model="isDialogOpen" persistent>
     <q-card class="dialog-card">
       <q-card-section class="row items-center justify-between q-pa-sm q-px-md">
-        <div class="text-h6 text-weight-medium text-black">{{ props.hotelName }}</div>
+        <div class="text-h6 text-weight-medium text-grey-8">{{ props.hotelName }}</div>
         <q-btn flat icon="close" @click="close" dense color="black" />
       </q-card-section>
 
@@ -78,8 +77,7 @@
             v-for="(amenity, index) in props.hotel?.amenities"
             :key="index"
             outline
-            color="primary"
-            text-color="primary"
+            :text-color="'blue-4'"
             :icon="amenityIcons[amenity] || 'check'"
           >
             {{ amenity }}
@@ -104,7 +102,7 @@
   </q-dialog>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .dialog-card {
     max-width: 600px;
     width: 95vw;
@@ -115,7 +113,7 @@
   .section-title {
     font-size: 16px;
     font-weight: 500;
-    color: #1976D2; /* azul primário */
+    color: $primary-100;
   }
 
   .image-container {
@@ -128,7 +126,7 @@
     margin-inline: 10px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.85);
-    color: #333;
+    color: $primary-200;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
 
@@ -144,14 +142,16 @@
     position: absolute;
     top: 8px;
     left: 8px;
-    background: white;
-    padding: 4px 6px;
+    background-color: white !important;
+    padding: 4px 6px !important;
     border-radius: 16px;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
     margin-top: 10px;
   }
 
+  .amenities-option {
+    color: $primary-100;
+  }
 </style>

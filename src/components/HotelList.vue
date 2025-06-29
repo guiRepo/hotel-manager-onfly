@@ -40,26 +40,26 @@
 <template>
   <div class="hotel-page-wrapper">
     <div class="filter-bar row">
-    <q-select
-      v-model="selectedSort"
-      :options="sortOptions"
-      label="Ordenar por"
-      hide-bottom-space
-      :dense="true"
-      borderless
-      class="sortby-select"
-      options-selected-class="text-blue"
-      @update:model-value="onSortChange"
-      >
-      <template v-slot:option="scope">
-          <q-item v-bind="scope.itemProps">
-            <q-item-section>
-              <q-item-label class="custom-option">{{ scope.opt.label }}</q-item-label>
-            </q-item-section>
-          </q-item>
-        </template>
+      <q-select
+        v-model="selectedSort"
+        :options="sortOptions"
+        label="Ordenar por"
+        hide-bottom-space
+        :dense="true"
+        borderless
+        class="sortby-select"
+        options-selected-class="text-blue"
+        @update:model-value="onSortChange"
+        >
+        <template v-slot:option="scope">
+            <q-item v-bind="scope.itemProps">
+              <q-item-section>
+                <q-item-label class="custom-option">{{ scope.opt.label }}</q-item-label>
+              </q-item-section>
+            </q-item>
+          </template>
 
-    </q-select>
+      </q-select>
       <q-input
         v-model="searchQuery"
         placeholder="Nome do Hotel"
@@ -72,13 +72,14 @@
         <template #append><q-icon name="search" /></template>
       </q-input>
     </div>
+
     <div v-if="loading" class="text-center q-my-lg">Carregando…</div>
     <div v-else-if="error"  class="text-negative q-my-lg">{{ error }}</div>
 
     <div v-else class="hotel-list-container">
       <div v-for="hotel in paginatedHotels" :key="hotel.id" class="card-container row no-wrap">
-        <div class="thumb-container col-3"><Thumb :data="hotel" /></div>
-        <div class="content-container col-7"><Content :data="hotel" /></div>
+        <div class="thumb-container col-2"><Thumb :data="hotel" /></div>
+        <div class="content-container col-8"><Content :data="hotel" /></div>
         <div class="pricing-container col-2"><Pricing :data="hotel" /></div>
       </div>
     </div>
@@ -160,7 +161,7 @@
   }
 
   .content-container {
-    padding: 16px 24px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
