@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { onMounted, ref } from 'vue';
+  import { onMounted } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useHotelStore } from './../stores/hotelStore.ts';
   import Thumb from './CardComponents/Thumb.vue';
@@ -11,6 +11,7 @@
     paginatedHotels, totalPages, currentPage,
     selectedSort,   searchQuery,  loading, error
   } = storeToRefs(hotelStore);
+
   type SortOption = {
     label: string;
     value: string;
@@ -19,7 +20,6 @@
   const sortOptions: SortOption[] = [
     { label: 'Preço', value: 'price' },
     { label: 'Avaliação', value: 'rating' },
-    { label: 'Nome', value: 'name' }
   ];
 
   onMounted(() => hotelStore.fetchHotels()) 
@@ -47,6 +47,7 @@
         hide-bottom-space
         :dense="true"
         borderless
+        emit-value map-options
         class="sortby-select"
         options-selected-class="text-blue"
         @update:model-value="onSortChange"
