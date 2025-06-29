@@ -1,7 +1,7 @@
 // vite.config.ts
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
@@ -17,6 +17,11 @@ export default defineConfig({
       sassVariables: '@/quasar-variables.scss'
     })
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './vitest.setup.ts'
+  },
   css: {
     preprocessorOptions: {
       scss: {
