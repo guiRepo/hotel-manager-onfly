@@ -10,11 +10,9 @@
   const stars = ref(4)
 
   function nextImage () {
-    currentIndex.value = (currentIndex.value + 1) % images.length
   }
 
   function prevImage () {
-    currentIndex.value = (currentIndex.value - 1 + images.length) % images.length
   }
 </script>
 

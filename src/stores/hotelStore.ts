@@ -28,7 +28,7 @@ export const useHotelStore = defineStore('hotels', {
     error: null as string | null,
 
     currentPage: 1,
-    perPage: 5,
+    perPage: 3,
     selectedSort: 'price',
     searchQuery: '',
     selectedCity: null as string | null,

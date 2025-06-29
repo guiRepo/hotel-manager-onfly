@@ -2,7 +2,7 @@
   import { onMounted } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useHotelStore } from './../stores/hotelStore.ts';
-  import Card from './CardComponents/Card.vue';
+  import Thumb from './CardComponents/Thumb.vue';
   import Content from './CardComponents/Content.vue';
   import Pricing from './CardComponents/Pricing.vue';
 
@@ -54,13 +54,10 @@
     <div v-else-if="error"  class="text-negative q-my-lg">{{ error }}</div>
 
     <div v-else class="hotel-list-container">
-      <div v-for="hotel in paginatedHotels"
-        :key="hotel.id"
-        class="list-cell row no-wrap"
-      >
-        <div class="a1 col-3"><Card    :data="hotel" /></div>
-        <div class="a2 col-7"><Content :data="hotel" /></div>
-        <div class="a3 col-2"><Pricing :data="hotel" /></div>
+      <div v-for="hotel in paginatedHotels" :key="hotel.id" class="list-cell row no-wrap">
+        <div class="thumb-container col-3"><Thumb :data="hotel" /></div>
+        <div class="content-container col-7"><Content :data="hotel" /></div>
+        <div class="pricing-container col-2"><Pricing :data="hotel" /></div>
       </div>
     </div>
 
@@ -68,10 +65,12 @@
       v-model="currentPage"
       :max="totalPages"
       max-pages="7"
-      color="primary"
       unelevated
+      rounded
+      color="grey-1"
+      text-color="blue"
       @update:model-value="onPageChange"
-      class="q-mt-md"
+      class="pagination-icon"
     />
   </div>
 </template>
@@ -136,7 +135,7 @@
     margin-bottom: 10px;
   }
 
-  .a1 {
+  .thumb-container {
     height: 100%;
     position: relative;
     border-start-start-radius: 20px;
@@ -144,14 +143,14 @@
     overflow: hidden;
   }
 
-  .a2 {
+  .content-container {
     padding: 16px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .a3 {
+  .pricing-container {
     padding: 16px;
     background-color: #fafafa;
     display: flex;
@@ -160,5 +159,11 @@
     align-items: flex-start;
     border-start-end-radius: 20px;
     border-end-end-radius: 20px;
+  }
+
+  .pagination-icon {
+    height: 50px;
+    padding-bottom: 10px;
+    margin-left: 45px;
   }
 </style>
