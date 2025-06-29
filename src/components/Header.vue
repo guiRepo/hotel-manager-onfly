@@ -1,64 +1,58 @@
 <script setup lang="ts">
-  import { useQuasar } from 'quasar'
-  import { ref } from 'vue'
-  import { storeToRefs } from 'pinia'
-  import { useHotelStore } from './../stores/hotelStore.ts'
+  import { storeToRefs } from 'pinia';
+  import { useHotelStore } from './../stores/hotelStore.ts';
   
   const hotelStore = useHotelStore();
   const { searchDistrict } = storeToRefs(hotelStore);
 
-  function onSearchByDistrict(district: string) {
+  function onSearchByDistrict(district: string): void {
     hotelStore.searchCities(district);
   }
 </script>
 
 <template>
   <section class="filter-container">
-    <div >
-        <q-tabs
-          v-model="tab"
-          inline-label
-          switch-indicator
-          indicator-color="primary"
-          class="custom-tab" 
-          align="left"
-        >
-          <q-tab name="Aéreo" icon="flight" label="Aéreo" />
-          <q-tab name="Hotel" icon="local_hotel" label="Hotel" />
-          <q-tab name="Carro" icon="directions_car" label="Carro" />
-          <q-tab name="Ônibus" icon="directions_bus" label="Ônibus" />
-        </q-tabs>
-    </div>
+    <q-tabs
+      inline-label
+      switch-indicator
+      indicator-color="primary"
+      class="nav-tab" 
+      align="left"
+    >
+      <q-tab name="Aéreo" icon="flight" label="Aéreo" />
+      <q-tab name="Hotel" icon="local_hotel" label="Hotel" />
+      <q-tab name="Carro" icon="directions_car" label="Carro" />
+      <q-tab name="Ônibus" icon="directions_bus" label="Ônibus" />
+    </q-tabs>
     <div class="form-container">
-    <q-form @submit="onSubmit" class="row justify-between items-center">
-      <q-input
-        class="input-a"
-        v-model="searchDistrict"
-        label="Destino"
-        hide-bottom-space
-        :dense="true"
-        borderless
-        @update:model-value="onSearchByDistrict"
-        >
-      </q-input>
-      <q-btn
-        class="btn-search"
-        icon="search"
-        @click="onSubmit"
-        label="Buscar Hotel"
-        dense
-        unelevated
-        />
-    </q-form>
+      <q-form class="row justify-between items-center">
+        <q-input
+          class="search-destiny-input"
+          v-model="searchDistrict"
+          label="Destino"
+          hide-bottom-space
+          :dense="true"
+          borderless
+          @update:model-value="onSearchByDistrict"
+          >
+        </q-input>
+        <q-btn
+          class="search-button"
+          icon="search"
+          label="Buscar Hotel"
+          dense
+          unelevated
+          />
+      </q-form>
     </div>
   </section>
-
 </template>
 
 <style lang="scss" scoped>
   .filter-container {
-    margin: 20px;
+    margin: 30px;
     padding-block: 5px;
+    margin-inline: 45px;
     color: black;
     background-color: #fff;
     border-radius: $border-radius-unit;
@@ -72,14 +66,14 @@
     top: 10px;
   }
 
-  .custom-tab {
+  .nav-tab {
     margin-bottom: 10px;
     background-color: #fff;
     border-radius: $border-radius-unit;
     color: $info-600;
   }
 
-  .input-a {
+  .search-destiny-input {
     background-color: $info-100;
     width: 500px;
     border-radius: $border-radius-unit;
@@ -89,7 +83,7 @@
 
   }
 
-  .btn-search {
+  .search-button {
     background-color: $primary-100;
     color: #fff;
     font-size: $font-size-base;

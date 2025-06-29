@@ -1,25 +1,30 @@
 <script setup lang="ts">
-  import { onMounted }       from 'vue'
-  import { storeToRefs }     from 'pinia'
-  import { useHotelStore }   from './../stores/hotelStore.ts'
-  import Card     from './CardComponents/Card.vue'
-  import Content  from './CardComponents/Content.vue'
-  import Pricing  from './CardComponents/Pricing.vue'
+  import { onMounted } from 'vue';
+  import { storeToRefs } from 'pinia';
+  import { useHotelStore } from './../stores/hotelStore.ts';
+  import Card from './CardComponents/Card.vue';
+  import Content from './CardComponents/Content.vue';
+  import Pricing from './CardComponents/Pricing.vue';
 
-  const hotelStore = useHotelStore()
-
+  const hotelStore = useHotelStore();
   const {
     paginatedHotels, totalPages, currentPage,
     selectedSort,   searchQuery,  loading, error
-  } = storeToRefs(hotelStore)
-
+  } = storeToRefs(hotelStore);
 
   onMounted(() => hotelStore.fetchHotels()) 
 
+  function onSortChange(val: string): void { 
+    hotelStore.setSort(val);
+  }
 
-  function onSortChange(val: string)  { hotelStore.setSort(val) }
-  function onSearch(val: string)      { hotelStore.setSearch(val) }
-  function onPageChange(page: number) { hotelStore.setPage(page) }
+  function onSearch(val: string): void { 
+    hotelStore.setSearch(val);
+  }
+  
+  function onPageChange(page: number): void { 
+    hotelStore.setPage(page);
+  }
 </script>
 
 <template>
@@ -36,7 +41,6 @@
         dense outlined emit-value map-options
         @update:model-value="onSortChange"
       />
-
       <q-input
         v-model="searchQuery"
         dense outlined clearable debounce="300"
@@ -46,13 +50,11 @@
         <template #append><q-icon name="search" /></template>
       </q-input>
     </div>
-
     <div v-if="loading" class="text-center q-my-lg">Carregando…</div>
     <div v-else-if="error"  class="text-negative q-my-lg">{{ error }}</div>
 
     <div v-else class="hotel-list-container">
-      <div
-        v-for="hotel in paginatedHotels"
+      <div v-for="hotel in paginatedHotels"
         :key="hotel.id"
         class="list-cell row no-wrap"
       >
@@ -75,90 +77,88 @@
 </template>
 
 <style lang="scss" scoped>
-.hotel-page-wrapper {
-  padding: 20px 30px;
-  border-start-start-radius: 60px;
-  border-start-end-radius: 60px;
-  min-height: 100vh;
-}
+  .hotel-page-wrapper {
+    border-start-start-radius: 60px;
+    border-start-end-radius: 60px;
+    min-height: 100vh;
+  }
 
-.top-search-bar {
-  background: white;
-  padding: 16px;
-  border-radius: 12px;
-  max-width: 800px;
-  margin: 0 auto 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  .top-search-bar {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
-.destination-input {
-  flex: 1;
-  min-width: 250px;
-}
+  .destination-input {
+    flex: 1;
+    min-width: 250px;
+  }
 
-.search-button {
-  height: 40px;
-}
+  .search-button {
+    height: 40px;
+  }
 
-.filter-bar {
-  background: white;
-  padding: 12px;
-  border-radius: 16px;
-  max-width: 600px;
-  margin: 0 auto 0px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 5;
-}
+  .filter-bar {
+    background: white;
+    padding: 12px;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 0 auto 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+  }
 
-.sort-select {
-  min-width: 180px;
-}
+  .sort-select {
+    min-width: 180px;
+  }
 
-.search-input {
-  flex: 1;
-  max-width: 300px;
-}
+  .search-input {
+    flex: 1;
+    max-width: 300px;
+  }
 
-.hotel-list-container {
-  background-color: $info-200;
-  padding: 30px;
-  border-radius: 20px;
-}
+  .hotel-list-container {
+    background-color: $info-200;
+    padding: 45px;
+    border-radius: 70px;
+  }
 
-.list-cell {
-  background-color: #fff;
-  border-radius: 20px;
-  height: 230px;
-  overflow: hidden;
-  display: flex;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  margin-bottom: 10px;
-}
+  .list-cell {
+    background-color: #fff;
+    border-radius: 20px;
+    height: 230px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+  }
 
-.a1 {
-  height: 100%;
-  position: relative;
-  border-start-start-radius: 20px;
-  border-end-start-radius: 20px;
-  overflow: hidden;
-}
+  .a1 {
+    height: 100%;
+    position: relative;
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+    overflow: hidden;
+  }
 
-.a2 {
-  padding: 16px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .a2 {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.a3 {
-  padding: 16px;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border-start-end-radius: 20px;
-  border-end-end-radius: 20px;
-}
-
+  .a3 {
+    padding: 16px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-start-end-radius: 20px;
+    border-end-end-radius: 20px;
+  }
 </style>
