@@ -26,13 +26,11 @@ export const useHotelStore = defineStore('hotels', {
     hotels: [] as Hotel[],
     loading: false,
     error: null as string | null,
-
     currentPage: 1,
-    perPage: 5,
-    selectedSort: 'price',
+    perPage: 3,
+    selectedSort: '',
     searchQuery: '',
     selectedCity: null as string | null,
-
     searchDistrict: '',
     cityLoading: false,
     cityOptions: [] as CityOption[]
@@ -42,18 +40,15 @@ export const useHotelStore = defineStore('hotels', {
     filteredHotels (state): Hotel[] {
       let list = [...state.hotels]
 
-      // Filtro por cidade
       if (state.selectedCity) {
         list = list.filter(h => h.placeId === state.selectedCity)
       }
 
-      // Filtro por nome de hotel
       if (state.searchQuery.trim()) {
         const q = state.searchQuery.toLowerCase()
         list = list.filter(h => h.name.toLowerCase().includes(q))
       }
 
-      // Ordenação
       const sort = state.selectedSort
       if (sort === 'price')  list.sort((a, b) => a.totalPrice - b.totalPrice)
       if (sort === 'rating') list.sort((a, b) => b.stars - a.stars)
@@ -110,7 +105,6 @@ export const useHotelStore = defineStore('hotels', {
           value: city.placeId
         }))
 
-        // Se só uma cidade foi encontrada, aplicar o filtro automaticamente
         if (this.cityOptions.length === 1) {
           this.selectedCity = this.cityOptions[0].value
           this.currentPage = 1
@@ -129,8 +123,8 @@ export const useHotelStore = defineStore('hotels', {
       this.currentPage = 1
     },
 
-    setPage(page: number)         { this.currentPage = page },
-    setSort(sort: string)         { this.selectedSort = sort; this.currentPage = 1 },
-    setSearch(q: string)          { this.searchQuery = q; this.currentPage = 1 },
+    setPage(page: number) { this.currentPage = page },
+    setSort(sort: string) { this.selectedSort = sort; this.currentPage = 1 },
+    setSearch(q: string) { this.searchQuery = q; this.currentPage = 1 },
   }
 })

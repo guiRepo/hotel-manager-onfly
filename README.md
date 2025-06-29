@@ -1,5 +1,35 @@
-# Vue 3 + TypeScript + Vite
+# Hotels OnlyFly
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aplicação Vue 3 + Quasar para listagem, filtragem e ordenação de hotéis.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- [Vue 3](https://vuejs.org/)
+- [Quasar Framework](https://quasar.dev/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SCSS](https://sass-lang.com/)
+- [JSON Server](https://github.com/typicode/json-server)
+
+---
+
+## 🚀 Instalação
+
+> ⚠️ **Antes de executar a aplicação, certifique-se de que você tem o Node.js instalado (recomendado: v18 ou superior).**
+
+```bash
+# 1. Clone o repositório
+git https://github.com/guiRepo/hotel-manager-onlyfly
+cd hotel-manager-onlyfly
+
+# 2. Instale as dependências
+npm install --legacy-peer-deps
+
+# 3. Inicie o servidor de desenvolvimento
+npm run dev
+
+#4. Inicie o json server
+npx json-server --watch payload.json --port 3000

@@ -1,17 +1,9 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
-  
-  const props = defineProps<{
-    data: any
-  }>()
-
-  const refundableTextClass = computed(() =>
-    props.data.hasRefundableRoom ? 'text-green' : 'text-red'
-  )
-
-  const breakfastTextClass = computed(() =>
-    props.data.hasBreakFast ? 'text-green' : 'text-red'
-  )
+  const props = defineProps<{ data: any }>();
+  const refundableText = props.data.hasRefundableRoom ? 'Reembolsável' : 'Não Reembolsável';
+  const breakFastText = props.data.hasBreakFast? 'Café da manhã' : 'Sem Café da manhã';
+  const refundableTextColor = props.data.hasRefundableRoom ? 'text-green' : 'text-red';
+  const breakfastTextColor = props.data.hasBreakFast ? 'text-green' : 'text-red';
 
   const amenityIconMap: Record<string, string> = {
     'Wi-Fi': 'wifi',
@@ -27,8 +19,10 @@
 
 <template>
   <div class="content-container">
-    <div class="content-title">{{ data.name }}</div>
-    <div class="content-subtitle">{{ data.district }}</div>
+    <div class="title">
+      <div class="content-title">{{ data.name }}</div>
+      <div class="content-subtitle">{{ data.district }}</div>
+    </div>
 
     <div class="amenities">
       <q-icon
@@ -42,12 +36,12 @@
 
     <div class="benefits ">
       <div class="benefit">
-        <q-icon name="attach_money" :class="refundableTextClass" />
-        <span :class="refundableTextClass">Reembolsável</span>
+        <q-icon name="attach_money" :class="refundableTextColor" />
+        <span :class="refundableTextColor">{{ refundableText }}</span>
       </div>
       <div class="benefit">
-        <q-icon name="restaurant" :class="breakfastTextClass" />
-        <span :class="breakfastTextClass">Café da manhã</span>
+        <q-icon name="restaurant" :class="breakfastTextColor" />
+        <span :class="breakfastTextColor">{{ breakFastText }}</span>
       </div>
     </div>
   </div>
@@ -56,12 +50,17 @@
 <style scoped lang="scss">
   .content-title {
     font-size: $font-size-title;
+    font-weight: 500;
     color: $info-600;
   }
 
   .content-subtitle {
     font-size: $font-size-base;
     color: $info-300;
+  }
+  .title {
+    position: relative;
+    bottom: 15px;
   }
 
   .content-container {
@@ -86,14 +85,18 @@
 
   .benefits {
     display: flex;
-    gap: 20px;
-    margin-top: 8px;
+    position: relative;
+    flex-direction: column;
+    gap: 5px;
     font-size: 14px;
+    top: 10px;
+    margin-top: 5px;
   }
 
   .benefit {
     display: flex;
     align-items: center;
     gap: 4px;
+    font-weight: 600;
   }
 </style>
