@@ -29,7 +29,7 @@ export const useHotelStore = defineStore('hotels', {
 
     currentPage: 1,
     perPage: 3,
-    selectedSort: 'price',
+    selectedSort: '',
     searchQuery: '',
     selectedCity: null as string | null,
 

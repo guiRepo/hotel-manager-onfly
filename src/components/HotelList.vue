@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { onMounted } from 'vue';
+  import { onMounted, ref } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useHotelStore } from './../stores/hotelStore.ts';
   import Thumb from './CardComponents/Thumb.vue';
@@ -11,6 +11,16 @@
     paginatedHotels, totalPages, currentPage,
     selectedSort,   searchQuery,  loading, error
   } = storeToRefs(hotelStore);
+  type SortOption = {
+    label: string;
+    value: string;
+  };
+
+  const sortOptions: SortOption[] = [
+    { label: 'Preço', value: 'price' },
+    { label: 'Avaliação', value: 'rating' },
+    { label: 'Nome', value: 'name' }
+  ];
 
   onMounted(() => hotelStore.fetchHotels()) 
 
@@ -29,22 +39,34 @@
 
 <template>
   <div class="hotel-page-wrapper">
-    <div class="filter-bar row justify-center q-gutter-sm">
-      <q-select
-        v-model="selectedSort"
-        :options="[
-          { label: 'Preço',     value: 'price'  },
-          { label: 'Avaliação', value: 'rating' },
-          { label: 'Nome',      value: 'name'   }
-        ]"
-        label="Ordenar por"
-        dense outlined emit-value map-options
-        @update:model-value="onSortChange"
-      />
+    <div class="filter-bar row">
+    <q-select
+      v-model="selectedSort"
+      :options="sortOptions"
+      label="Ordenar por"
+      hide-bottom-space
+      :dense="true"
+      borderless
+      class="sortby-select"
+      options-selected-class="text-blue"
+      @update:model-value="onSortChange"
+      >
+      <template v-slot:option="scope">
+          <q-item v-bind="scope.itemProps">
+            <q-item-section>
+              <q-item-label class="custom-option">{{ scope.opt.label }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </template>
+
+    </q-select>
       <q-input
         v-model="searchQuery"
-        dense outlined clearable debounce="300"
         placeholder="Nome do Hotel"
+        hide-bottom-space
+        :dense="true"
+        borderless
+        class="search-hotel-input"
         @update:model-value="onSearch"
       >
         <template #append><q-icon name="search" /></template>
@@ -54,7 +76,7 @@
     <div v-else-if="error"  class="text-negative q-my-lg">{{ error }}</div>
 
     <div v-else class="hotel-list-container">
-      <div v-for="hotel in paginatedHotels" :key="hotel.id" class="list-cell row no-wrap">
+      <div v-for="hotel in paginatedHotels" :key="hotel.id" class="card-container row no-wrap">
         <div class="thumb-container col-3"><Thumb :data="hotel" /></div>
         <div class="content-container col-7"><Content :data="hotel" /></div>
         <div class="pricing-container col-2"><Pricing :data="hotel" /></div>
@@ -101,22 +123,16 @@
   }
 
   .filter-bar {
-    background: white;
+    position: relative;
+    top: 30px;
     padding: 12px;
     border-radius: 16px;
     max-width: 600px;
-    margin: 0 auto 0px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto 0px;
+    justify-content: center;
+    align-items: center;
     z-index: 5;
-  }
-
-  .sort-select {
-    min-width: 180px;
-  }
-
-  .search-input {
-    flex: 1;
-    max-width: 300px;
+    gap: 20px;
   }
 
   .hotel-list-container {
@@ -125,7 +141,7 @@
     border-radius: 70px;
   }
 
-  .list-cell {
+  .card-container {
     background-color: #fff;
     border-radius: 20px;
     height: 230px;
@@ -165,5 +181,25 @@
     height: 50px;
     padding-bottom: 10px;
     margin-left: 45px;
+  }
+
+  .sortby-select, .search-hotel-input {
+    background-color:$info-100;
+    border-radius: $border-radius-unit;
+    border: 1px solid $info-300;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .custom-option {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: $primary-100;
+
+  &.option--selected {
+    background-color: $primary-100;
+    font-weight: bold;
+  }
   }
 </style>
